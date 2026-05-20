@@ -1,0 +1,138 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="照相馆 // Gallery">
+  <section class="p-6 md:p-8 rounded-3xl bg-white border border-zinc-200/40 shadow-[0_4px_20px_rgba(0,0,0,0.02)] mb-8 space-y-6">
+    <div>
+      <div class="text-[11px] font-mono text-zinc-400 tracking-wider">
+        <a href="/" class="hover:text-zinc-600 transition-colors">首页</a>
+        <span class="mx-1 text-zinc-300">/</span>
+        <span class="font-semibold text-zinc-500">照相馆</span>
+      </div>
+      <h1 class="text-3xl font-black text-zinc-900 mt-1">服务器照相馆</h1>
+      <p class="text-base text-zinc-600/90 mt-1">定格生存开荒、红石大工程与那些温馨的联机瞬间。</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+      <div class="md:col-span-2 group relative overflow-hidden rounded-2xl bg-zinc-100 border border-zinc-100 h-64 md:h-80 transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.01)] hover:border-zinc-200">
+        <img
+          src="/photos/saneba.jpg"
+          alt="日常"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-zinc-950/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="absolute bottom-0 left-0 p-5 text-white">
+          <span class="text-[9px] font-mono uppercase tracking-widest bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded">游戏日常</span>
+          <h4 class="text-sm font-bold mt-2 font-mono">烛光晚餐</h4>
+          <p class="text-[10px] text-zinc-200/90 mt-0.5">三个服务器恶霸。</p>
+        </div>
+      </div>
+
+      <div class="group relative overflow-hidden rounded-2xl bg-zinc-100 border border-zinc-100 h-64 md:h-80 transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.01)] hover:border-zinc-200">
+        <img
+          src="/photos/shuangrenfengche.jpg"
+          alt="建筑"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-zinc-950/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="absolute bottom-0 left-0 p-5 text-white">
+          <span class="text-[9px] font-mono uppercase tracking-widest bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded">建筑</span>
+          <h4 class="text-sm font-bold mt-2 font-mono">基地一角 · 田园风光</h4>
+          <p class="text-[10px] text-zinc-200/90 mt-0.5">前期基地小建筑完工后的合影。</p>
+        </div>
+      </div>
+
+      <div class="group relative overflow-hidden rounded-2xl bg-zinc-100 border border-zinc-100 h-48 transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.01)] hover:border-zinc-200">
+        <img
+          src="/photos/gududebohetang.jpg"
+          alt="日常"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-zinc-950/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="absolute bottom-0 left-0 p-4 text-white">
+          <span class="text-[9px] font-mono uppercase tracking-widest bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded">游戏日常</span>
+          <h4 class="text-sm font-bold mt-1.5 font-mono">孤独的薄荷糖</h4>
+          <p class="text-[10px] text-zinc-200/90 mt-0.5">他又在思考什么呢？</p>
+        </div>
+      </div>
+
+      <div class="md:col-span-2 group relative overflow-hidden rounded-2xl bg-zinc-100 border border-zinc-100 h-48 transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.01)] hover:border-zinc-200">
+        <img
+          src="/photos/kaihuanghezhao.jpg"
+          alt="合影"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-zinc-950/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="absolute bottom-0 left-0 p-4 text-white">
+          <span class="text-[9px] font-mono uppercase tracking-widest bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded">开荒留念</span>
+          <h4 class="text-sm font-bold mt-1.5 font-mono">周六开荒夜 · 全员大合照</h4>
+          <p class="text-[10px] text-zinc-200/90 mt-0.5">集体合影，纪念RTS新纪元开启。</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="p-6 md:p-8 rounded-3xl bg-white border border-zinc-200/40 shadow-[0_4px_20px_rgba(0,0,0,0.02)] mb-8 space-y-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="md:col-span-2 group relative overflow-hidden rounded-2xl bg-zinc-100 border border-zinc-100 h-64 md:h-80 transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.01)] hover:border-zinc-200">
+        <img
+          src=""
+          alt="待替换"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-zinc-950/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="absolute bottom-0 left-0 p-5 text-white">
+          <span class="text-[9px] font-mono uppercase tracking-widest bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded">精彩瞬间</span>
+          <h4 class="text-sm font-bold mt-2 font-mono">更多精彩 · 敬请期待</h4>
+          <p class="text-[10px] text-zinc-200/90 mt-0.5">把截图丢进 public/photos/ 目录即可自动替换。</p>
+        </div>
+      </div>
+
+      <div class="group relative overflow-hidden rounded-2xl bg-zinc-100 border border-zinc-100 h-64 md:h-80 transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.01)] hover:border-zinc-200">
+        <img
+          src=""
+          alt="待替换"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-zinc-950/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="absolute bottom-0 left-0 p-5 text-white">
+          <span class="text-[9px] font-mono uppercase tracking-widest bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded">待补充</span>
+          <h4 class="text-sm font-bold mt-2 font-mono">虚位以待</h4>
+          <p class="text-[10px] text-zinc-200/90 mt-0.5">虚位以待。</p>
+        </div>
+      </div>
+
+      <div class="group relative overflow-hidden rounded-2xl bg-zinc-100 border border-zinc-100 h-48 transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.01)] hover:border-zinc-200">
+        <img
+          src=""
+          alt="待替换"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-zinc-950/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="absolute bottom-0 left-0 p-4 text-white">
+          <span class="text-[9px] font-mono uppercase tracking-widest bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded">待补充</span>
+          <h4 class="text-sm font-bold mt-1.5 font-mono">虚位以待</h4>
+          <p class="text-[10px] text-zinc-200/90 mt-0.5">虚位以待。</p>
+        </div>
+      </div>
+
+      <div class="md:col-span-2 group relative overflow-hidden rounded-2xl bg-zinc-100 border border-zinc-100 h-48 transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.01)] hover:border-zinc-200">
+        <img
+          src=""
+          alt="待替换"
+          class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-zinc-950/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="absolute bottom-0 left-0 p-4 text-white">
+          <span class="text-[9px] font-mono uppercase tracking-widest bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded">待补充</span>
+          <h4 class="text-sm font-bold mt-1.5 font-mono">虚位以待</h4>
+          <p class="text-[10px] text-zinc-200/90 mt-0.5">虚位以待。</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</Layout>

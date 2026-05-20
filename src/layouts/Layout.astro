@@ -1,0 +1,52 @@
+---
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+const displayTitle = title ? `${title} // RTS Server` : "RTS Server";
+const currentPath = Astro.url.pathname;
+
+const navClass = (href: string) =>
+  currentPath === href
+    ? "font-semibold text-zinc-950"
+    : "hover:text-zinc-950 transition-colors";
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="RTS Minecraft Server - 原版生存·红石科技·精美建筑" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{displayTitle}</title>
+  </head>
+  <body class="bg-zinc-100/70 min-h-screen flex flex-col selection:bg-pink-500 selection:text-white">
+
+    <header class="w-full bg-white border-b border-zinc-200/50 sticky top-0 z-50 transition-all">
+      <div class="max-w-5xl w-full mx-auto px-6 py-5 flex justify-between items-center">
+        <a href="/" class="text-xl font-black tracking-widest text-zinc-950 font-mono">RTS</a>
+        <nav class="flex items-center gap-6 text-sm font-medium text-zinc-600">
+          <a href="/" class={navClass("/")}>首页</a>
+          <a href="/members" class={navClass("/members")}>成员</a>
+          <a href="/gallery" class={navClass("/gallery")}>照相馆</a>
+          <a href="/projects" class={navClass("/projects")}>项目</a>
+          <a href="/blog" class={navClass("/blog")}>博客</a>
+          <a href="/join" class={navClass("/join")}>加入我们</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="max-w-5xl w-full mx-auto px-6 py-12 flex-grow">
+      <slot />
+    </main>
+
+    <footer class="max-w-5xl w-full mx-auto px-6 py-10 border-t border-zinc-200/40 text-center">
+      <p class="text-[10px] font-mono text-zinc-400 tracking-wider">
+        &copy; {new Date().getFullYear()} RTS SERVER. ALL RIGHTS RESERVED.
+      </p>
+    </footer>
+  </body>
+</html>
