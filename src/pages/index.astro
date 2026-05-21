@@ -120,4 +120,57 @@ import Layout from '../layouts/Layout.astro';
       </a>
     </div>
   </section>
+
+  <div id="secret-panel" class="hidden opacity-0 transition-opacity duration-500 border-t border-zinc-200/60 bg-white py-8 px-4 relative mt-8">
+    <button id="secret-close" class="absolute top-4 right-4 font-mono text-[10px] text-zinc-400 hover:text-zinc-700 transition-colors tracking-wider cursor-pointer">[ Close ]</button>
+
+    <div class="max-w-4xl mx-auto font-mono text-[11px] text-zinc-500 space-y-1">
+      <p>[ SYSTEM ] LOG: ENABLING HIDDEN PROTOCOL...</p>
+      <p>[ DECRYPT ] COORD: X: 114514 | Y: 64 | Z: 1919810 (Old Spawn Memorial)</p>
+
+      <p class="text-red-500/80">[ WARNING ] PROTOCOL_VIOLATION_DETECTED:</p>
+      <p class="pl-4">➔ 科技头: [WARN] 长期处于离线状态，被怀疑已转职为云玩家</p>
+      <p class="pl-4">➔ 晓晨: [WARN] 试图通过在群里发梗图来代替红石机器的日常维护</p>
+      <p class="pl-4 text-red-500/80">➔ 紫枫: [KICKED] 由于连续 72 小时没有上线被踢出服务器</p>
+      <p class="pl-4">➔ 薄荷糖: [WARN] 频繁提交官网前端改动，拒绝上游戏干活</p>
+
+      <p class="pt-1 text-zinc-400">[ COUNTER ] ACCIDENT: 距离服务器因为没人维护而停止运转已过去 0 天</p>
+    </div>
+  </div>
+
+  <script>
+    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+    let konamiIndex = 0;
+
+    const panel = document.getElementById('secret-panel');
+    const closeBtn = document.getElementById('secret-close');
+
+    document.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) return;
+
+      const key = e.key.toLowerCase();
+      const expected = konamiCode[konamiIndex].toLowerCase();
+
+      if (key === expected) {
+        konamiIndex++;
+        if (konamiIndex === konamiCode.length) {
+          panel.classList.remove('hidden');
+          requestAnimationFrame(() => {
+            panel.classList.remove('opacity-0');
+          });
+          konamiIndex = 0;
+        }
+      } else {
+        konamiIndex = (key === konamiCode[0].toLowerCase()) ? 1 : 0;
+      }
+    });
+
+    closeBtn.addEventListener('click', () => {
+      panel.classList.add('opacity-0');
+      konamiIndex = 0;
+      setTimeout(() => {
+        panel.classList.add('hidden');
+      }, 500);
+    });
+  </script>
 </Layout>
