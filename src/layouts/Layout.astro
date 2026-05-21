@@ -25,17 +25,34 @@ const navClass = (href: string) =>
   </head>
   <body class="bg-zinc-100/70 min-h-screen flex flex-col selection:bg-pink-500 selection:text-white">
 
-    <header class="w-full bg-white border-b border-zinc-200/50 sticky top-0 z-50 transition-all">
-      <div class="max-w-5xl w-full mx-auto px-6 py-5 flex justify-between items-center">
-        <a href="/" class="text-xl font-black tracking-widest text-zinc-950 font-mono">RTS</a>
-        <nav class="flex items-center gap-6 text-sm font-medium text-zinc-600">
-          <a href="/" class={navClass("/")}>首页</a>
-          <a href="/members" class={navClass("/members")}>成员</a>
-          <a href="/gallery" class={navClass("/gallery")}>照相馆</a>
-          <a href="/projects" class={navClass("/projects")}>项目</a>
-          <a href="/blog" class={navClass("/blog")}>博客</a>
-          <a href="/join" class={navClass("/join")}>加入我们</a>
-        </nav>
+    <header class="w-full bg-white border-b border-zinc-200/50 sticky top-0 z-50">
+      <div class="max-w-5xl w-full mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-3 group">
+          <div class="w-12 h-12 flex items-center justify-center border border-zinc-200 bg-white rounded-xl shadow-sm group-hover:border-zinc-300 transition-colors">
+            <img src="/logo.png" alt="RTS" class="w-10 h-10 object-contain rounded-lg" />
+          </div>
+          <div class="flex flex-col leading-none">
+            <span class="text-sm font-bold tracking-wide text-zinc-900">RTS Server</span>
+            <span class="text-[10px] text-zinc-400 font-normal tracking-wider mt-0.5">技术 · 红石 · 生存 · 建筑</span>
+          </div>
+        </a>
+
+        <div class="flex items-center gap-4">
+          <nav class="flex items-center gap-5 text-xs font-medium text-zinc-600">
+            <a href="/" class={navClass("/")}>首页</a>
+            <a href="/members" class={navClass("/members")}>成员</a>
+            <a href="/gallery" class={navClass("/gallery")}>照相馆</a>
+            <a href="/projects" class={navClass("/projects")}>项目</a>
+            <a href="/blog" class={navClass("/blog")}>博客</a>
+            <a href="/join" class={navClass("/join")}>加入我们</a>
+          </nav>
+
+          <div class="flex items-center gap-1.5 ml-1">
+            <a href="https://space.bilibili.com/1622862520" target="_blank" rel="noopener noreferrer" title="Bilibili" class="border border-zinc-200/60 rounded-xl p-1.5 text-zinc-400 hover:text-zinc-700 hover:border-zinc-300 transition-colors">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" /><polyline points="8 21 12 17 16 21" /></svg>
+            </a>
+          </div>
+        </div>
       </div>
     </header>
 
