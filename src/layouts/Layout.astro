@@ -65,5 +65,43 @@ const navClass = (href: string) =>
         &copy; {new Date().getFullYear()} RTS SERVER. ALL RIGHTS RESERVED.
       </p>
     </footer>
+
+    <script>
+      const originalTitle = document.title;
+      const items = ['铁锭', '红石粉', '绿宝石', '钻石', '下界合金碎屑', '火药', '粘液球'];
+      let afkTimer = null;
+      let lootBag = {};
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+          lootBag = {};
+          document.title = '☕ [AFK] 正在挂机中...';
+          afkTimer = setInterval(() => {
+            const item = items[Math.floor(Math.random() * items.length)];
+            const amount = Math.floor(Math.random() * 5) + 1;
+            lootBag[item] = (lootBag[item] || 0) + amount;
+            document.title = `📦 [AFK] ${item} +${amount}...`;
+          }, 3000);
+        } else {
+          clearInterval(afkTimer);
+          afkTimer = null;
+          document.title = '⚡ [ONLINE] 区块同步成功！';
+
+          if (Object.keys(lootBag).length > 0) {
+            const lootList = Object.entries(lootBag)
+              .map(([item, count]) => `• ${item} x ${count}`)
+              .join('\n');
+            alert(
+              `【 ☕ RTS 离线挂机收益报告 】\n\n检测到主区块已重新强加载，本次挂机池自动产出物资如下：\n----------------------------------------\n${lootList}\n----------------------------------------\n[ 提示 ]: 物资已自动存入你的官网虚拟末影箱，请继续修肝！`
+            );
+          }
+
+          lootBag = {};
+          setTimeout(() => {
+            document.title = originalTitle;
+          }, 1500);
+        }
+      });
+    </script>
   </body>
 </html>

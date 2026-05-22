@@ -1,0 +1,43 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <div class="bg-white flex flex-col items-center justify-center min-h-[70vh]">
+    <div class="font-mono text-center">
+      <h1 class="text-lg font-bold text-zinc-900 tracking-wider mb-4">404 - ERROR_CHUNK_NOT_LOADED</h1>
+      <p class="text-sm text-zinc-600 tracking-wide leading-relaxed">[ 原因 ]: 玩家在未加载的区块中窒息而死，当前坐标已丢失。</p>
+
+      <div class="flex flex-wrap justify-center gap-3 mt-8">
+      <a
+        href="/"
+        class="border border-zinc-200/80 text-[11px] px-4 py-1.5 text-zinc-700 hover:bg-black hover:text-white transition-colors duration-200"
+      >
+        [ 🔧 消耗 30 级经验值复活并返回主城 ]
+      </a>
+      <button
+        id="btn-call"
+        class="border border-zinc-200/80 text-[11px] px-4 py-1.5 text-zinc-700 hover:bg-black hover:text-white transition-colors duration-200 cursor-pointer"
+      >
+        [ 🛑 远程呼叫 晓晨/薄荷糖 过来帮你捡掉落物 ]
+      </button>
+      <button
+        id="btn-rollback"
+        class="border border-zinc-200/80 text-[11px] px-4 py-1.5 text-zinc-700 hover:bg-black hover:text-white transition-colors duration-200 cursor-pointer"
+      >
+        [ 🧩 强制将当前 404 区块回滚到上一周目 ]
+      </button>
+    </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('btn-call').addEventListener('click', () => {
+      alert('本地向玩家 [晓晨/薄荷糖] 发送的强加载请求已被拒绝。对方表示正在挂机，并对你翻了个白眼。');
+    });
+
+    document.getElementById('btn-rollback').addEventListener('click', () => {
+      alert('错误：权限不足。仅服主拥有此操作权限。');
+    });
+  </script>
+</Layout>
