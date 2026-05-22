@@ -1,6 +1,6 @@
 # 🪐 Minecraft Server Site Example
 
-一个专为 Minecraft 技术服 / 生电服 (Technical Minecraft Server) 量身定制的极简暗黑风格官方网站模板。基于 Astro 与 Tailwind CSS 构建，无任何客户端依赖，极致轻量，完美适配高逼格的技术宅社区。
+一个专为 Minecraft 技术服 / 生电服 (Technical Minecraft Server) 量身定制的极简暗黑风格官方网站模板。基于 Astro 与 Tailwind CSS 构建，无任何客户端依赖，极致轻量。
 
 > Live Demo: [www.rts-server.top]
 
