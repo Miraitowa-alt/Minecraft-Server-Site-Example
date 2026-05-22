@@ -4,31 +4,80 @@ import Layout from '../layouts/Layout.astro';
 const members = [
   {
     name: "晓晨",
-    role: "服主",
+    role: ["服主", "后勤","建筑"],
     avatar: "/avatars/xiaochen.jpg",
     bio: "RTS 服务器创始人。统筹服务器整体发展方向与社区文化建设。",
     bilibili: "https://space.bilibili.com/37404044"
   },
   {
     name: "紫枫",
-    role: "服主",
+    role: ["服主", "后勤"],
     avatar: "/avatars/zifeng.jpg",
     bio: "物理服主，保管服务器物理机及日常硬件维护。保障 7×24 小时稳定在线运行。",
     bilibili: "https://space.bilibili.com/38085691"
   },
   {
     name: "薄荷糖",
-    role: "服主",
+    role: ["服主","后勤","建筑"],
     avatar: "/avatars/bohentang.jpg",
-    bio: "管理服务器。负责插件、模组开发与网站建设。",
+    bio: "管理服务器。负责插件、模组开发与网站建设。作息极其不规律之人 世界最忧郁之人。",
     bilibili: "https://space.bilibili.com/671073068"
   },
   {
     name: "科技头",
-    role: "服主",
+    role: ["服主","后勤"],
     avatar: "/avatars/kejitou.jpg",
     bio: "负责摸鱼。偶尔上线冒个泡，证明人还在。",
     bilibili: "https://space.bilibili.com/401348262"
+  },
+  {
+    name: "樱花",
+    role: ["后勤"],
+    avatar: "/avatars/yinghua.jpg",
+    bio: "负责摸鱼。偶尔上线冒个泡，证明人还在。",
+    bilibili: "https://space.bilibili.com/2143506424"
+  },
+  {
+    name: "阿瓦",
+    role: ["红石"],
+    avatar: "/avatars/wawuli.jpg",
+    bio: "擅长储电。目前有点微死。",
+    bilibili: "https://space.bilibili.com/510518718"
+  },
+  {
+    name: "空梦",
+    role: ["后勤","建筑"],
+    avatar: "/avatars/Kaslanara.jpg",
+    bio: "负责摸鱼。最会修机器之人。",
+    bilibili: "https://space.bilibili.com/"
+  },
+  {
+    name: "苏打",
+    role: ["后勤"],
+    avatar: "/avatars/sudaarrays.jpg",
+    bio: "负责摸鱼。偶尔上线冒个泡，证明人还在。最会做格调之人",
+    bilibili: "https://space.bilibili.com/"
+  },
+  {
+    name: "氦三",
+    role: ["后勤","建筑"],
+    avatar: "/avatars/He_3.jpg",
+    bio: "一放假就做地图之人。",
+    bilibili: "https://space.bilibili.com/"
+  },
+  {
+    name: "厕人",
+    role: ["后勤","建筑"],
+    avatar: "/avatars/cere.jpg",
+    bio: "一放假就做地图之人。",
+    bilibili: "https://space.bilibili.com/"
+  },
+  {
+    name: "Kogoncold",
+    role: ["后勤"],
+    avatar: "/avatars/Kogoncold.jpg",
+    bio: "负责摸鱼。偶尔上线冒个泡，证明人还在。",
+    bilibili: "https://space.bilibili.com/"
   }
 ];
 ---
@@ -68,9 +117,11 @@ const members = [
 
             <div>
               <h3 class="text-sm font-bold text-zinc-900 tracking-wide font-mono">{m.name}</h3>
-              <span class="inline-block px-1.5 py-0.5 rounded text-[9px] font-medium bg-zinc-100 border border-zinc-200/50 text-zinc-500 scale-95 origin-left">
-                {m.role}
-              </span>
+              <div class="flex flex-wrap gap-1.5 mt-1">
+                {m.role.map((r) => (
+                  <span class="bg-zinc-100 text-zinc-600 text-[10px] px-2 py-0.5 rounded-sm font-mono">{r}</span>
+                ))}
+              </div>
             </div>
           </div>
 
