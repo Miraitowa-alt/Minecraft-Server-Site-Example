@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { siteConfig } from '../config';
 ---
 
 <Layout title="照相馆 // Gallery">
@@ -10,65 +11,65 @@ import Layout from '../layouts/Layout.astro';
         <span class="mx-1 text-zinc-300">/</span>
         <span class="font-semibold text-zinc-500">照相馆</span>
       </div>
-      <h1 class="text-3xl font-black text-zinc-900 mt-1">服务器照相馆</h1>
-      <p class="text-base text-zinc-600/90 mt-1">定格生存开荒、红石大工程与那些温馨的联机瞬间。</p>
+      <h1 class="text-3xl font-black text-zinc-900 mt-1">{siteConfig.gallery.title}</h1>
+      <p class="text-base text-zinc-600/90 mt-1">{siteConfig.gallery.subtitle}</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 
       <div class="md:col-span-2 group relative overflow-hidden rounded-2xl bg-zinc-100 border border-zinc-100 h-64 md:h-80 transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.01)] hover:border-zinc-200">
         <img
-          src="/photos/saneba.jpg"
+          src="/photos/placeholder-1.jpg"
           alt="日常"
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-zinc-950/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div class="absolute bottom-0 left-0 p-5 text-white">
           <span class="text-[9px] font-mono uppercase tracking-widest bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded">游戏日常</span>
-          <h4 class="text-sm font-bold mt-2 font-mono">烛光晚餐</h4>
-          <p class="text-[10px] text-zinc-200/90 mt-0.5">三个服务器恶霸。</p>
+          <h4 class="text-sm font-bold mt-2 font-mono">精彩瞬间</h4>
+          <p class="text-[10px] text-zinc-200/90 mt-0.5">将你的截图放入 public/photos/ 目录即可替换。</p>
         </div>
       </div>
 
       <div class="group relative overflow-hidden rounded-2xl bg-zinc-100 border border-zinc-100 h-64 md:h-80 transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.01)] hover:border-zinc-200">
         <img
-          src="/photos/shuangrenfengche.jpg"
+          src="/photos/placeholder-2.jpg"
           alt="建筑"
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-zinc-950/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div class="absolute bottom-0 left-0 p-5 text-white">
           <span class="text-[9px] font-mono uppercase tracking-widest bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded">建筑</span>
-          <h4 class="text-sm font-bold mt-2 font-mono">基地一角 · 田园风光</h4>
-          <p class="text-[10px] text-zinc-200/90 mt-0.5">前期基地小建筑完工后的合影。</p>
+          <h4 class="text-sm font-bold mt-2 font-mono">基地一角</h4>
+          <p class="text-[10px] text-zinc-200/90 mt-0.5">展示你的建筑作品。</p>
         </div>
       </div>
 
       <div class="group relative overflow-hidden rounded-2xl bg-zinc-100 border border-zinc-100 h-48 transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.01)] hover:border-zinc-200">
         <img
-          src="/photos/gududebohetang.jpg"
+          src="/photos/placeholder-3.jpg"
           alt="日常"
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-zinc-950/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div class="absolute bottom-0 left-0 p-4 text-white">
           <span class="text-[9px] font-mono uppercase tracking-widest bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded">游戏日常</span>
-          <h4 class="text-sm font-bold mt-1.5 font-mono">孤独的薄荷糖</h4>
-          <p class="text-[10px] text-zinc-200/90 mt-0.5">他又在思考什么呢？</p>
+          <h4 class="text-sm font-bold mt-1.5 font-mono">探索世界</h4>
+          <p class="text-[10px] text-zinc-200/90 mt-0.5">记录每一次冒险。</p>
         </div>
       </div>
 
       <div class="md:col-span-2 group relative overflow-hidden rounded-2xl bg-zinc-100 border border-zinc-100 h-48 transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.01)] hover:border-zinc-200">
         <img
-          src="/photos/kaihuanghezhao.jpg"
+          src="/photos/placeholder-4.jpg"
           alt="合影"
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-zinc-950/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div class="absolute bottom-0 left-0 p-4 text-white">
           <span class="text-[9px] font-mono uppercase tracking-widest bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded">开荒留念</span>
-          <h4 class="text-sm font-bold mt-1.5 font-mono">周六开荒夜 · 全员大合照</h4>
-          <p class="text-[10px] text-zinc-200/90 mt-0.5">集体合影，纪念RTS新纪元开启。</p>
+          <h4 class="text-sm font-bold mt-1.5 font-mono">集体合影</h4>
+          <p class="text-[10px] text-zinc-200/90 mt-0.5">纪念每一个重要时刻。</p>
         </div>
       </div>
 

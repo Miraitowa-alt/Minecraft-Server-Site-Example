@@ -1,85 +1,85 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { siteConfig } from '../config';
 ---
 
 <Layout>
   <section class="p-6 md:p-8 rounded-3xl bg-white border border-zinc-200/40 shadow-[0_4px_20px_rgba(0,0,0,0.02)] mb-8 space-y-6">
-    <p class="text-sm tracking-[0.2em] text-zinc-400">RandomTicks Server</p>
+    <p class="text-sm tracking-[0.2em] text-zinc-400">{siteConfig.home.hero.subtitle}</p>
 
     <h1 class="text-4xl font-medium tracking-wide text-zinc-900">
-      原版生存 &middot; 红石科技 &middot; 精美建筑
+      {siteConfig.home.hero.title}
     </h1>
 
     <p class="max-w-2xl leading-relaxed text-zinc-600">
-      RTS 是一个以原版生存为核心的 Minecraft 服务器。
-      我们热衷于红石、建筑与拓展玩法，在稳定与克制的氛围中，共同探索方块世界的无限可能。
+      {siteConfig.home.hero.description}
     </p>
   </section>
 
   <section class="p-6 md:p-8 rounded-3xl bg-white border border-zinc-200/40 shadow-[0_4px_20px_rgba(0,0,0,0.02)] mb-8 space-y-6">
     <div>
       <a href="/gallery" class="text-[11px] font-mono text-zinc-400 tracking-wider hover:text-zinc-700 transition-colors inline-flex items-center gap-1 group/link">
-        服务器日常 / 照相馆
+        {siteConfig.home.gallery.title}
         <span class="inline-block transition-transform duration-200 group-hover/link:translate-x-0.5">&rarr;</span>
       </a>
-      <p class="text-xs text-zinc-500 mt-1">定格生存开荒、红石大工程与那些温馨的瞬间。</p>
+      <p class="text-xs text-zinc-500 mt-1">{siteConfig.home.gallery.subtitle}</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 
       <div class="md:col-span-2 group relative overflow-hidden rounded-2xl bg-zinc-100 border border-zinc-100 h-64 md:h-80 transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.01)] hover:border-zinc-200">
         <img
-          src="/photos/saneba.jpg"
+          src="/photos/placeholder-1.jpg"
           alt="日常"
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-zinc-950/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div class="absolute bottom-0 left-0 p-5 text-white">
           <span class="text-[9px] font-mono uppercase tracking-widest bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded">游戏日常</span>
-          <h4 class="text-sm font-bold mt-2 font-mono">烛光晚餐</h4>
-          <p class="text-[10px] text-zinc-200/90 mt-0.5">三个服务器恶霸。</p>
+          <h4 class="text-sm font-bold mt-2 font-mono">精彩瞬间</h4>
+          <p class="text-[10px] text-zinc-200/90 mt-0.5">将你的截图放入 public/photos/ 目录即可替换。</p>
         </div>
       </div>
 
       <div class="group relative overflow-hidden rounded-2xl bg-zinc-100 border border-zinc-100 h-64 md:h-80 transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.01)] hover:border-zinc-200">
         <img
-          src="/photos/shuangrenfengche.jpg"
+          src="/photos/placeholder-2.jpg"
           alt="建筑"
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-zinc-950/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div class="absolute bottom-0 left-0 p-5 text-white">
           <span class="text-[9px] font-mono uppercase tracking-widest bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded">建筑</span>
-          <h4 class="text-sm font-bold mt-2 font-mono">基地一角 · 田园风光</h4>
-          <p class="text-[10px] text-zinc-200/90 mt-0.5">前期基地小建筑完工后的合影。</p>
+          <h4 class="text-sm font-bold mt-2 font-mono">基地一角</h4>
+          <p class="text-[10px] text-zinc-200/90 mt-0.5">展示你的建筑作品。</p>
         </div>
       </div>
 
       <div class="group relative overflow-hidden rounded-2xl bg-zinc-100 border border-zinc-100 h-48 transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.01)] hover:border-zinc-200">
         <img
-          src="/photos/gududebohetang.jpg"
+          src="/photos/placeholder-3.jpg"
           alt="日常"
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-zinc-950/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div class="absolute bottom-0 left-0 p-4 text-white">
           <span class="text-[9px] font-mono uppercase tracking-widest bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded">游戏日常</span>
-          <h4 class="text-sm font-bold mt-1.5 font-mono">孤独的薄荷糖</h4>
-          <p class="text-[10px] text-zinc-200/90 mt-0.5">他又在思考什么呢？</p>
+          <h4 class="text-sm font-bold mt-1.5 font-mono">探索世界</h4>
+          <p class="text-[10px] text-zinc-200/90 mt-0.5">记录每一次冒险。</p>
         </div>
       </div>
 
       <div class="md:col-span-2 group relative overflow-hidden rounded-2xl bg-zinc-100 border border-zinc-100 h-48 transition-all duration-300 shadow-[0_2px_8px_rgba(0,0,0,0.01)] hover:border-zinc-200">
         <img
-          src="/photos/kaihuanghezhao.jpg"
+          src="/photos/placeholder-4.jpg"
           alt="合影"
           class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
         <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/60 via-zinc-950/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
         <div class="absolute bottom-0 left-0 p-4 text-white">
           <span class="text-[9px] font-mono uppercase tracking-widest bg-white/20 backdrop-blur-sm px-2 py-0.5 rounded">开荒留念</span>
-          <h4 class="text-sm font-bold mt-1.5 font-mono">周六开荒夜 · 全员大合照</h4>
-          <p class="text-[10px] text-zinc-200/90 mt-0.5">集体合影，纪念RTS新纪元开启。</p>
+          <h4 class="text-sm font-bold mt-1.5 font-mono">集体合影</h4>
+          <p class="text-[10px] text-zinc-200/90 mt-0.5">纪念每一个重要时刻。</p>
         </div>
       </div>
 
@@ -87,37 +87,18 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <section class="p-6 md:p-8 rounded-3xl bg-white border border-zinc-200/40 shadow-[0_4px_20px_rgba(0,0,0,0.02)] mb-8 space-y-10">
-    <h2 class="text-xs tracking-[0.3em] text-zinc-400 uppercase">快速导航</h2>
+    <h2 class="text-xs tracking-[0.3em] text-zinc-400 uppercase">{siteConfig.home.quickNav.title}</h2>
 
     <div class="grid grid-cols-2 gap-px bg-zinc-200">
-      <a
-        href="/members"
-        class="flex flex-col gap-1 bg-white px-6 py-5 hover:bg-zinc-50 transition-colors duration-200"
-      >
-        <span class="text-sm tracking-wider text-zinc-800">成员</span>
-        <span class="text-xs text-zinc-400">了解服务器的核心贡献者</span>
-      </a>
-      <a
-        href="/projects"
-        class="flex flex-col gap-1 bg-white px-6 py-5 hover:bg-zinc-50 transition-colors duration-200"
-      >
-        <span class="text-sm tracking-wider text-zinc-800">项目</span>
-        <span class="text-xs text-zinc-400">自研插件与开源仓库</span>
-      </a>
-      <a
-        href="/blog"
-        class="flex flex-col gap-1 bg-white px-6 py-5 hover:bg-zinc-50 transition-colors duration-200"
-      >
-        <span class="text-sm tracking-wider text-zinc-800">博客</span>
-        <span class="text-xs text-zinc-400">玩家与管理员的日常日志</span>
-      </a>
-      <a
-        href="/join"
-        class="flex flex-col gap-1 bg-white px-6 py-5 hover:bg-zinc-50 transition-colors duration-200"
-      >
-        <span class="text-sm tracking-wider text-zinc-800">加入我们</span>
-        <span class="text-xs text-zinc-400">申请加入 RTS 服务器</span>
-      </a>
+      {siteConfig.home.quickNav.items.map((item) => (
+        <a
+          href={item.href}
+          class="flex flex-col gap-1 bg-white px-6 py-5 hover:bg-zinc-50 transition-colors duration-200"
+        >
+          <span class="text-sm tracking-wider text-zinc-800">{item.name}</span>
+          <span class="text-xs text-zinc-400">{item.description}</span>
+        </a>
+      ))}
     </div>
   </section>
 
@@ -125,16 +106,16 @@ import Layout from '../layouts/Layout.astro';
     <button id="secret-close" class="absolute top-4 right-4 font-mono text-[10px] text-zinc-400 hover:text-zinc-700 transition-colors tracking-wider cursor-pointer">[ Close ]</button>
 
     <div class="max-w-4xl mx-auto font-mono text-[11px] text-zinc-500 space-y-1">
-      <p>[ SYSTEM ] LOG: ENABLING HIDDEN PROTOCOL...</p>
-      <p>[ DECRYPT ] COORD: X: 114514 | Y: 64 | Z: 1919810</p>
+      {siteConfig.secretPanel.logs.map((log) => (
+        <p>{log}</p>
+      ))}
 
-      <p class="text-red-500/80">[ WARNING ] PROTOCOL_VIOLATION_DETECTED:</p>
-      <p class="pl-4">➔ 紫枫: [WARN] 长期处于离线状态，被怀疑已转职为云玩家</p>
-      <p class="pl-4">➔ 晓晨: [WARN] 试图通过在群里发梗图来代替红石机器的日常维护</p>
-      <p class="pl-4 text-red-500/80">➔ 科技头: [KICKED] 由于连续 72 小时没有上线被踢出服务器</p>
-      <p class="pl-4">➔ 薄荷糖: [WARN] 频繁提交官网前端改动，拒绝上游戏干活</p>
+      <p class="text-red-500/80">{siteConfig.secretPanel.warnings[0]}</p>
+      {siteConfig.secretPanel.warnings.slice(1).map((warning) => (
+        <p class="pl-4">{warning}</p>
+      ))}
 
-      <p class="pt-1 text-zinc-400">[ COUNTER ] ACCIDENT: 距离服务器因为没人维护而停止运转已过去 0 天</p>
+      <p class="pt-1 text-zinc-400">{siteConfig.secretPanel.counter}</p>
     </div>
   </div>
 

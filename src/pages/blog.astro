@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { siteConfig } from '../config';
 
 const posts = await getCollection('blog');
 posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
@@ -14,7 +15,7 @@ posts.sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime());
         <span class="mx-1 text-zinc-300">/</span>
         <span class="font-semibold text-zinc-500">博客</span>
       </div>
-      <p class="text-base text-zinc-600/90 mt-1">玩家与管理员的日常日志。</p>
+      <p class="text-base text-zinc-600/90 mt-1">{siteConfig.blog.subtitle}</p>
     </div>
 
     {

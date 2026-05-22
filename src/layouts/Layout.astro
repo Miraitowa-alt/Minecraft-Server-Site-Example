@@ -1,10 +1,12 @@
 ---
+import { siteConfig } from '../config';
+
 interface Props {
   title?: string;
 }
 
 const { title } = Astro.props;
-const displayTitle = title ? `${title} // RTS Server` : "RTS Server";
+const displayTitle = title ? `${title} // ${siteConfig.name}` : siteConfig.name;
 const currentPath = Astro.url.pathname;
 
 const navClass = (href: string) =>
@@ -17,7 +19,7 @@ const navClass = (href: string) =>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="RTS Minecraft Server - 原版生存·红石科技·精美建筑" />
+    <meta name="description" content={siteConfig.description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/png" href="/logo.png" />
     <meta name="generator" content={Astro.generator} />
@@ -29,26 +31,23 @@ const navClass = (href: string) =>
       <div class="max-w-5xl w-full mx-auto px-6 py-4 flex items-center justify-between">
         <a href="/" class="flex items-center gap-3 group">
           <div class="w-12 h-12 flex items-center justify-center border border-zinc-200 bg-white rounded-xl shadow-sm group-hover:border-zinc-300 transition-colors">
-            <img src="/logo.png" alt="RTS" class="w-10 h-10 object-contain rounded-lg" />
+            <img src="/logo.png" alt={siteConfig.name} class="w-10 h-10 object-contain rounded-lg" />
           </div>
           <div class="flex flex-col leading-none">
-            <span class="text-sm font-bold tracking-wide text-zinc-900">RTS Server</span>
-            <span class="text-[10px] text-zinc-400 font-normal tracking-wider mt-0.5">技术 · 红石 · 生存 · 建筑</span>
+            <span class="text-sm font-bold tracking-wide text-zinc-900">{siteConfig.name}</span>
+            <span class="text-[10px] text-zinc-400 font-normal tracking-wider mt-0.5">{siteConfig.tagline}</span>
           </div>
         </a>
 
         <div class="flex items-center gap-4">
           <nav class="flex items-center gap-5 text-xs font-medium text-zinc-600">
-            <a href="/" class={navClass("/")}>首页</a>
-            <a href="/members" class={navClass("/members")}>成员</a>
-            <a href="/gallery" class={navClass("/gallery")}>照相馆</a>
-            <a href="/projects" class={navClass("/projects")}>项目</a>
-            <a href="/blog" class={navClass("/blog")}>博客</a>
-            <a href="/join" class={navClass("/join")}>加入我们</a>
+            {siteConfig.navigation.map((item) => (
+              <a href={item.href} class={navClass(item.href)}>{item.name}</a>
+            ))}
           </nav>
 
           <div class="flex items-center gap-1.5 ml-1">
-            <a href="https://space.bilibili.com/1622862520" target="_blank" rel="noopener noreferrer" title="Bilibili" class="border border-zinc-200/60 rounded-xl p-1.5 text-zinc-400 hover:text-zinc-700 hover:border-zinc-300 transition-colors">
+            <a href={siteConfig.social.bilibili} target="_blank" rel="noopener noreferrer" title="Bilibili" class="border border-zinc-200/60 rounded-xl p-1.5 text-zinc-400 hover:text-zinc-700 hover:border-zinc-300 transition-colors">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" /><polyline points="8 21 12 17 16 21" /></svg>
             </a>
           </div>
@@ -62,20 +61,20 @@ const navClass = (href: string) =>
 
     <footer class="max-w-5xl w-full mx-auto px-6 py-10 border-t border-zinc-200/40 text-center">
       <p class="text-[10px] font-mono text-zinc-400 tracking-wider">
-        &copy; {new Date().getFullYear()} RTS SERVER. ALL RIGHTS RESERVED.
+        &copy; {siteConfig.footer.copyright}
       </p>
     </footer>
 
-    <script>
+    <script define:vars={{ siteConfig }}>
       const originalTitle = document.title;
-      const items = ['铁锭', '红石粉', '绿宝石', '钻石', '下界合金碎屑', '火药', '粘液球'];
+      const items = siteConfig.afk.items;
       let afkTimer = null;
       let lootBag = {};
 
       document.addEventListener('visibilitychange', () => {
         if (document.hidden) {
           lootBag = {};
-          document.title = '☕ [AFK] 正在挂机中...';
+          document.title = siteConfig.afk.messages.afk;
           afkTimer = setInterval(() => {
             const item = items[Math.floor(Math.random() * items.length)];
             const amount = Math.floor(Math.random() * 5) + 1;
@@ -85,14 +84,14 @@ const navClass = (href: string) =>
         } else {
           clearInterval(afkTimer);
           afkTimer = null;
-          document.title = '⚡ [ONLINE] 区块同步成功！';
+          document.title = siteConfig.afk.messages.online;
 
           if (Object.keys(lootBag).length > 0) {
             const lootList = Object.entries(lootBag)
               .map(([item, count]) => `• ${item} x ${count}`)
               .join('\n');
             alert(
-              `【 ☕ RTS 离线挂机收益报告 】\n\n检测到主区块已重新强加载，本次挂机池自动产出物资如下：\n----------------------------------------\n${lootList}\n----------------------------------------\n[ 提示 ]: 物资已自动存入你的官网虚拟末影箱，请继续修肝！`
+              `${siteConfig.afk.messages.lootTitle}\n\n${siteConfig.afk.messages.lootIntro}\n----------------------------------------\n${lootList}\n----------------------------------------\n${siteConfig.afk.messages.lootOutro}`
             );
           }
 

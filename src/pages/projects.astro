@@ -1,20 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { siteConfig } from '../config';
 
-const projects = [
-  {
-    title: "RTS Website",
-    description: "基于 Astro 与 Tailwind CSS 的服务器官网。",
-    tags: ["Astro", "TailwindCSS", "TypeScript"],
-    repoUrl: "https://github.com/Miraitowa-alt/RTS-Server",
-  },
-  {
-    title: "Player Scale",
-    description: "基于 Python 的 MCDR 插件-可随意改变玩家自身体型，方便施工", // 
-  tags: ["Python", "Plugin", "MCDR"],
-  repoUrl: "https://github.com/Miraitowa-alt/Player_Scale",
-  },
-];
+const projects = siteConfig.projects.placeholderProjects;
 ---
 
 <Layout title="项目成果 // Projects">
@@ -25,7 +13,7 @@ const projects = [
         <span class="mx-1 text-zinc-300">/</span>
         <span class="font-semibold text-zinc-500">项目</span>
       </div>
-      <p class="text-base text-zinc-600/90 mt-1">开源项目
+      <p class="text-base text-zinc-600/90 mt-1">{siteConfig.projects.subtitle}</p>
     </div>
 
     <ul class="divide-y divide-zinc-100">
